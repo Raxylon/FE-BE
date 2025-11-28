@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js Projekt
+Dies ist ein Next.js Projekt, initialisiert mit create-next-app.
 
-## Getting Started
+Erste Schritte
+Starten Sie zunächst den Development-Server:
 
-First, run the development server:
-
-```bash
+bash
 npm run dev
-# or
+# oder
 yarn dev
-# or
+# oder
 pnpm dev
-# or
+# oder
 bun dev
-```
+Öffnen Sie http://localhost:3000 in Ihrem Browser, um das Ergebnis zu sehen.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Sie können die Seite bearbeiten, indem Sie app/page.tsx modifizieren. Die Seite aktualisiert sich automatisch während Sie bearbeiten.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dieses Projekt verwendet next/font, um automatisch Geist zu optimieren und zu laden, eine neue Schriftarten-Familie für Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Weitere Informationen
+Um mehr über Next.js zu lernen, sehen Sie sich die folgenden Ressourcen an:
 
-## Learn More
+Next.js Dokumentation - lernen Sie Next.js Features und API kennen.
 
-To learn more about Next.js, take a look at the following resources:
+Learn Next.js - ein interaktives Next.js Tutorial.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Sie können auch das Next.js GitHub Repository besuchen - Ihr Feedback und Ihre Beiträge sind willkommen!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployment auf Vercel
+Der einfachste Weg, Ihre Next.js App zu deployen, ist die Vercel Platform von den Creatorn von Next.js zu verwenden.
 
-## Deploy on Vercel
+Lesen Sie unsere Next.js Deployment Dokumentation für mehr Details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Backend-Frontend Integration Project
+Dieses Projekt demonstriert eine einfache Full-Stack-Anwendung, die aus einem FastAPI-Backend und einem React-Frontend besteht. Die Anwendung zeigt die grundlegende Kommunikation zwischen Frontend und Backend über HTTP-Requests und eignet sich ideal als Ausgangspunkt für komplexere Full-Stack-Projekte.
+
+Projektübersicht
+Das Backend wurde mit FastAPI implementiert und bietet zwei einfache API-Endpoints, die JSON-Antworten zurückgeben. Besonders wichtig ist die Implementierung von CORS (Cross-Origin Resource Sharing), die es dem Frontend ermöglicht, sicher mit dem Backend zu kommunizieren, auch wenn sie auf unterschiedlichen Domains oder Ports laufen. Die CORS-Konfiguration ist derzeit für Entwicklungszwecke offen eingestellt, erlaubt alle Ursprünge, Methoden und Header - in einer Produktionsumgebung sollte diese Konfiguration jedoch entsprechend eingeschränkt werden.
+
+Das Frontend besteht aus einer React-Komponente mit TypeScript-Unterstützung, die beim Laden der Seite automatisch eine HTTP-Anfrage an das Backend sendet. Die Komponente verwendet React Hooks wie useState für die Zustandsverwaltung der API-Antwort und useEffect für das Ausführen des API-Calls beim initialen Rendern. Die Oberfläche zeigt clearly an, ob die Daten erfolgreich geladen wurden oder ob Fehler aufgetreten sind.
+
+Installation und Ausführung
+Um das Projekt lokal auszuführen, benötigen Sie Python 3.8+ für das Backend und Node.js 16+ für das Frontend. Starten Sie zunächst das Backend durch Navigieren in das Backend-Verzeichnis und Ausführen von pip install fastapi uvicorn gefolgt von uvicorn main:app --reload --port 8000. Anschließend starten Sie das Frontend in einem separaten Terminal durch Wechseln in das Frontend-Verzeichnis und Ausführen von npm install und npm run dev. Standardmäßig erwartet das Frontend das Backend unter http://localhost:8000 - stellen Sie sicher, dass beide Dienste laufen und die Ports verfügbar sind.
+
+API-Kommunikation und Endpoints
+Das Backend bietet zwei einfache Endpoints: Der Root-Endpoint unter GET / antwortet mit einer Begrüßungsnachricht, während der GET /hello-Endpoint die spezifische Nachricht "Hallo aus dem Backend!" zurückgibt. Das Frontend kommuniziert asynchron mit diesen Endpoints und zeigt die empfangenen Daten in der Benutzeroberfläche an. Die Architektur folgt einem klaren Trennungskonzept, bei dem das Frontend nur für die Darstellung zuständig ist und das Backend die Geschäftslogik und Datenbereitstellung übernimmt.
