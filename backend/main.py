@@ -18,3 +18,5 @@ async def root():
 @app.get("/hello")
 def hello():
     return {"message": "Hallo aus dem Backend!"}
+
+    # hierbei handelt es sich lediglich um einen kleinen Test zu besseren verstehen von Versionskontrolle
