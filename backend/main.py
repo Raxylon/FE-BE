@@ -13,7 +13,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"message": "Hallo vonnnn deinem Backend"}
+    return {"message": "Hallo von deinem Backend"}
 
 @app.get("/hello")
 def hello():
