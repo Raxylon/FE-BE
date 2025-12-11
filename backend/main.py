@@ -13,8 +13,10 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {"message": "Hallo vonnnn deinem Backend"}
+    return {"message": "Hallo von deinem Backend"}
 
 @app.get("/hello")
 def hello():
     return {"message": "Hallo aus dem Backend!"}
+
+    # hierbei handelt es sich lediglich um einen kleinen Test zu besseren verstehen von Versionskontrolle
